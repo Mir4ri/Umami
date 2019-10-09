@@ -93,3 +93,37 @@
     }
   }
 }
+
+@media screen and (max-width: 1500px) {
+  * {
+    font-size: 18px;
+  }
+  .container {
+    width: 1366px;
+  }
+}
+
+@media screen and (max-width: 1410px) {
+  * {
+    font-size: 16px;
+  }
+  .container {
+    width: 1200px;
+  }
+
+  .menu {
+    .itemTitle {
+      width: 380px;
+    }
+    .wrapper {
+      .col {
+        width: 380px;
+      }
+    }
+  }
+  .gallery {
+    img {
+      width: 380px;
+    }
+  }
+}

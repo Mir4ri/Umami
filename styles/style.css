@@ -196,4 +196,31 @@ header .container .cart {
 .menu .description b {
   font-size: 1.2em;
 }
+
+@media screen and (max-width: 1500px) {
+  * {
+    font-size: 18px;
+  }
+  .container {
+    width: 1366px;
+  }
+}
+
+@media screen and (max-width: 1410px) {
+  * {
+    font-size: 16px;
+  }
+  .container {
+    width: 1200px;
+  }
+  .menu .itemTitle {
+    width: 380px;
+  }
+  .menu .wrapper .col {
+    width: 380px;
+  }
+  .gallery img {
+    width: 380px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
