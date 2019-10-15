@@ -59,37 +59,91 @@
     }
   }
 
-  .wrapper {
+  .grid-wrap {
+    display: grid;
+    grid-template-columns: 440px 440px 440px;
+    justify-content: space-between;
     margin-bottom: 50px;
-    .col {
+
+    .menuItem {
       width: 440px;
-      .menuItem {
-        margin-bottom: 26px;
-        .menuItem__top {
-          margin-bottom: 8px;
-          .menuItem__top__name {
+      margin-bottom: 26px;
+      .menuItem__top {
+        margin-bottom: 8px;
+        .menuItem__top__name {
+          font-size: 1.2em;
+          font-weight: 600;
+          letter-spacing: 0.03em;
+        }
+        .menuItem__top__price {
+          display: flex;
+          p {
+            margin-right: 15px;
             font-size: 1.2em;
             font-weight: 600;
             letter-spacing: 0.03em;
           }
-          .menuItem__top__price {
-            font-size: 1.2em;
-            font-weight: 600;
-            letter-spacing: 0.03em;
+          img {
+            cursor: pointer;
           }
         }
-        .menuItem__bottom {
-          font-size: 0.9em;
-        }
+      }
+      .menuItem__bottom {
+        font-size: 0.9em;
       }
     }
   }
+}
 
-  .description {
+.description {
+  letter-spacing: 0.15em;
+  margin-bottom: 35px;
+  b {
+    font-size: 1.2em;
+  }
+}
+
+// end menu
+
+/* sets */
+
+.sets {
+  .setsTitle {
+    font-size: 1.4em;
+    text-align: center;
     letter-spacing: 0.15em;
-    margin-bottom: 35px;
-    b {
-      font-size: 1.2em;
+    margin-bottom: 42px;
+  }
+  .grid-wrap {
+    display: grid;
+    grid-template-columns: 440px 440px 440px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    .setItem {
+      width: 440px;
+      margin-bottom: 35px;
+      .setItem__top {
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        .setItem__top__name {
+          font-size: 1.2em;
+          font-weight: 600;
+          letter-spacing: 0.03em;
+        }
+      }
+      .setItem__description {
+        font-weight: 300;
+        margin-bottom: 25px;
+      }
+      .setList {
+        list-style: none;
+        .setList__item {
+          font-weight: 300;
+          margin-bottom: 6px;
+        }
+      }
     }
   }
 }
@@ -115,8 +169,17 @@
     .itemTitle {
       width: 380px;
     }
-    .wrapper {
-      .col {
+    .grid-wrap {
+      grid-template-columns: 380px 380px 380px;
+      .menuItem {
+        width: 380px;
+      }
+    }
+  }
+  .sets {
+    .grid-wrap {
+      grid-template-columns: 380px 380px 380px;
+      .setItem {
         width: 380px;
       }
     }
