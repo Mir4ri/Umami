@@ -115,6 +115,13 @@ header .container .cart {
           justify-content: space-between;
 }
 
+.title {
+  font-size: 1.4em;
+  text-align: center;
+  letter-spacing: 0.15em;
+  margin-bottom: 42px;
+}
+
 /* hero */
 .hero {
   background-image: url("../img/hero.jpg");
@@ -133,13 +140,6 @@ header .container .cart {
   margin-bottom: 99px;
 }
 
-.menu .menuTitle {
-  text-align: center;
-  font-size: 1.4em;
-  letter-spacing: 0.15em;
-  margin-bottom: 31px;
-}
-
 .menu .itemTitle {
   width: 440px;
   font-weight: 300;
@@ -156,7 +156,7 @@ header .container .cart {
   font-size: 1.4em;
 }
 
-.menu .grid-wrap {
+.menu .gridWrap {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 440px 440px 440px;
@@ -167,39 +167,39 @@ header .container .cart {
   margin-bottom: 50px;
 }
 
-.menu .grid-wrap .menuItem {
+.menu .gridWrap .menuItem {
   width: 440px;
   margin-bottom: 26px;
 }
 
-.menu .grid-wrap .menuItem .menuItem__top {
+.menu .gridWrap .menuItem .menuItem__top {
   margin-bottom: 8px;
 }
 
-.menu .grid-wrap .menuItem .menuItem__top .menuItem__top__name {
+.menu .gridWrap .menuItem .menuItem__top .menuItem__top__name {
   font-size: 1.2em;
   font-weight: 600;
   letter-spacing: 0.03em;
 }
 
-.menu .grid-wrap .menuItem .menuItem__top .menuItem__top__price {
+.menu .gridWrap .menuItem .menuItem__top .menuItem__top__price {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.menu .grid-wrap .menuItem .menuItem__top .menuItem__top__price p {
+.menu .gridWrap .menuItem .menuItem__top .menuItem__top__price p {
   margin-right: 15px;
   font-size: 1.2em;
   font-weight: 600;
   letter-spacing: 0.03em;
 }
 
-.menu .grid-wrap .menuItem .menuItem__top .menuItem__top__price img {
+.menu .gridWrap .menuItem .menuItem__top .menuItem__top__price img {
   cursor: pointer;
 }
 
-.menu .grid-wrap .menuItem .menuItem__bottom {
+.menu .gridWrap .menuItem .menuItem__bottom {
   font-size: 0.9em;
 }
 
@@ -213,14 +213,11 @@ header .container .cart {
 }
 
 /* sets */
-.sets .setsTitle {
-  font-size: 1.4em;
-  text-align: center;
-  letter-spacing: 0.15em;
-  margin-bottom: 42px;
+.sets {
+  margin-bottom: 47px;
 }
 
-.sets .grid-wrap {
+.sets .gridWrap {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 440px 440px 440px;
@@ -231,12 +228,12 @@ header .container .cart {
   margin-bottom: 50px;
 }
 
-.sets .grid-wrap .setItem {
+.sets .gridWrap .setItem {
   width: 440px;
   margin-bottom: 35px;
 }
 
-.sets .grid-wrap .setItem .setItem__top {
+.sets .gridWrap .setItem .setItem__top {
   margin-bottom: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -246,24 +243,140 @@ header .container .cart {
           justify-content: space-between;
 }
 
-.sets .grid-wrap .setItem .setItem__top .setItem__top__name {
+.sets .gridWrap .setItem .setItem__top .setItem__top__name {
   font-size: 1.2em;
   font-weight: 600;
   letter-spacing: 0.03em;
 }
 
-.sets .grid-wrap .setItem .setItem__description {
+.sets .gridWrap .setItem .setItem__description {
   font-weight: 300;
   margin-bottom: 25px;
 }
 
-.sets .grid-wrap .setItem .setList {
+.sets .gridWrap .setItem .setList {
   list-style: none;
 }
 
-.sets .grid-wrap .setItem .setList .setList__item {
+.sets .gridWrap .setItem .setList .setList__item {
   font-weight: 300;
   margin-bottom: 6px;
+}
+
+/* delivery */
+#delivery .gridDelivery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 880px 440px;
+      grid-template-columns: 880px 440px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 104px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#delivery .gridDelivery .gridDelivery__description .gdDescTitle {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+}
+
+#delivery .gridDelivery .gridDelivery__description p {
+  line-height: 35px;
+  font-weight: 300;
+  font-size: 1.2em;
+}
+
+#delivery .gridDelivery .gridDelivery__description p:nth-child(2) {
+  margin-bottom: 25px;
+}
+
+#delivery .gridDelivery .gridDelivery__whenOrderGet .gdWhenTitle {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+}
+
+#delivery .gridDelivery .gridDelivery__whenOrderGet p {
+  line-height: 32px;
+  font-weight: 300;
+  font-size: 1.2em;
+}
+
+/* footer */
+footer {
+  border-top: 1px solid #c4c4c4;
+  width: 100%;
+  padding-top: 47px;
+  margin-bottom: 40px;
+}
+
+footer .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .info .deliveryAndBook {
+  display: block;
+}
+
+footer .info .deliveryAndBook .dbTitle {
+  margin-bottom: 12px;
+}
+
+footer .info .deliveryAndBook span {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .info .deliveryAndBook span img {
+  margin-right: 14px;
+}
+
+footer .info .deliveryAndBook span .love {
+  margin: 0 5px;
+}
+
+footer .info .deliveryAndBook span .mir4ri {
+  margin-left: 5px;
+  text-decoration: none;
+  color: #d20000;
+}
+
+footer .info .deliveryAndBook span .mir4ri:hover {
+  text-decoration: underline;
+}
+
+footer .info .deliveryAndBook span:nth-child(3) {
+  margin-bottom: 43px;
+}
+
+footer .info .addrAndSchedule .asTitle {
+  margin-bottom: 3px;
+}
+
+footer .info .addrAndSchedule p {
+  margin-bottom: 26px;
+}
+
+footer .info .addrAndSchedule .schedule {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .info .addrAndSchedule .schedule div span {
+  display: block;
 }
 
 @media screen and (max-width: 1500px) {
@@ -285,18 +398,18 @@ header .container .cart {
   .menu .itemTitle {
     width: 380px;
   }
-  .menu .grid-wrap {
+  .menu .gridWrap {
     -ms-grid-columns: 380px 380px 380px;
         grid-template-columns: 380px 380px 380px;
   }
-  .menu .grid-wrap .menuItem {
+  .menu .gridWrap .menuItem {
     width: 380px;
   }
-  .sets .grid-wrap {
+  .sets .gridWrap {
     -ms-grid-columns: 380px 380px 380px;
         grid-template-columns: 380px 380px 380px;
   }
-  .sets .grid-wrap .setItem {
+  .sets .gridWrap .setItem {
     width: 380px;
   }
   .gallery img {
