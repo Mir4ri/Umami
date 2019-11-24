@@ -5,6 +5,15 @@
   font-family: "Exo 2", sans-serif;
   margin: 0;
   padding: 0;
+
+}
+
+*::selection {
+  background: #f52f2f;
+}
+
+html {
+  scroll-behavior: smooth;
   background: #fefefe;
 }
 
@@ -25,6 +34,31 @@
   margin-bottom: 42px;
 }
 
+/* notification */
+
+#notification {
+  position: fixed;
+  z-index: 2;
+  right: 0;
+  background: #d20000;
+  padding: 10px 20px;
+  font-weight: 600;
+  color: #fafafa;
+  top: 45px;
+  transition: 0.4s all ease-in;
+}
+
+#notification.active {
+  top: 92px;
+  transition: 0.4s all ease-out;
+}
+
+.active {
+  display: block;
+}
+
+
+
 /* hero */
 
 .hero {
@@ -39,13 +73,157 @@
   z-index: 0;
 }
 
-// end hero
+// fin hero
 
 /* menu */
 
 .menu {
   margin-bottom: 99px;
 
+  .title {
+    margin-bottom: 25px;
+  }
+  .choose {
+    position: relative;
+    text-align: center;
+    font-size: 1.2em;
+    letter-spacing: 0.15em;
+    margin-bottom: -2px;
+    z-index: 2;
+  }
+  // dropdown
+
+  #dropdown {
+    padding-bottom: 44px; 
+  }
+  #content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    width: 440px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 440px;
+    padding: 0 16px;
+    background-color: #fff;
+    cursor: pointer;
+    letter-spacing: 0.15em;
+  }
+
+  .placeholder {
+    color: #222222;
+    display: flex;
+    justify-content: center;
+  }
+
+  .input__placeholder {
+    text-align: center;
+
+  }
+
+  .structure > div {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 16px 0;
+  }
+  
+  .structure > div:hover {
+    background-color: #d20000;
+    color: #fafafa;
+    cursor: pointer;
+  }
+  
+  .structure > div > h5 {
+    font-family: "Exo 2", sans-serif;
+    margin-right: 4px;
+  }
+  
+  .index {
+    z-index: -999;
+  }
+  .hide {
+    display: none;
+ 
+  }
+
+
+  .cont_select_int {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    overflow: hidden;
+    height: 0px;
+    width: 100%;
+    background-color: #fff;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    border-radius: 0px 0px 3px 3px;
+    transition: all 225ms ease-out;
+
+    li {
+      font-size: 1.2em;
+      position: relative;
+      float: left;
+      width: 96%;
+      // background-color: #fefefe;
+      list-style-type: none;
+      padding: 10px 2%;
+      margin: 0px;
+      transition: all 5ms ease;
+      display: block;
+      cursor: pointer;
+      &:last-child {
+        border-radius: 3px;
+        border-bottom: 0px;
+      }
+      // &:nth-child(2n + 1) {
+      //   background-color: #fafafa;
+      // }
+      &:hover {
+        background-color: #d20000;
+        color: #fafafa;
+      }
+    }
+
+    .active {
+      text-decoration: underline;
+    }
+  }
+
+  /* etiqueta <p> con la opcion selecionada  */
+  .selected_option {
+    font-size: 1.2em;
+    padding: 14px 2%;
+    width: 96%;
+    display: block;
+    margin: 0px;
+    cursor: pointer;
+  }
+
+  // fin dropdown
+  .sushi {
+    display: none;
+  }
+  .activeKind {
+    position: relative;
+    transition: all 0.4s ease;
+    display: block;
+  }
   .itemTitle {
     width: 440px;
     font-weight: 300;
@@ -78,7 +256,7 @@
         }
         .menuItem__top__price {
           display: flex;
-          p {
+          span {
             margin-right: 15px;
             font-size: 1.2em;
             font-weight: 600;
@@ -104,7 +282,7 @@
   }
 }
 
-// end menu
+// fin  menu
 
 /* sets */
 
@@ -129,8 +307,12 @@
           font-weight: 600;
           letter-spacing: 0.03em;
         }
+        img {
+          cursor: pointer;
+        }
       }
       .setItem__description {
+        display: block;
         font-weight: 300;
         margin-bottom: 25px;
       }
@@ -145,7 +327,7 @@
   }
 }
 
-// end sets
+// fin sets
 
 /* delivery */
 
@@ -164,7 +346,7 @@
       p {
         line-height: 35px;
         font-weight: 300;
-        font-size: 1.2em;
+        font-size: 1.1em;
       }
       p:nth-child(2) {
         margin-bottom: 25px;
@@ -178,13 +360,13 @@
       p {
         line-height: 32px;
         font-weight: 300;
-        font-size: 1.2em;
+        font-size: 1.1em;
       }
     }
   }
 }
 
-// end delivery
+// fin delivery
 
 /* footer */
 
@@ -193,6 +375,7 @@ footer {
   width: 100%;
   padding-top: 47px;
   margin-bottom: 40px;
+
   .info {
     display: flex;
     justify-content: space-between;
