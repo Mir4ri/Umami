@@ -49,6 +49,19 @@ header {
     .cart {
       align-self: center;
       justify-content: flex-end;
+      #localLength {
+        position: relative;
+        left: -20px;
+        background: #d20000;
+        height: 28px;
+        width: 30px;
+        text-align: center;
+        vertical-align: center;
+        padding-top: 2px;
+        color: #fefefe;
+        font-weight: bold;
+        border-radius: 50%;
+      }
     }
   }
 }

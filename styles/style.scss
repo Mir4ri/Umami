@@ -1,11 +1,11 @@
 @import "./components/_header.scss";
+@import "./components/_cart.scss";
 
 * {
   font-size: 20px;
   font-family: "Exo 2", sans-serif;
   margin: 0;
   padding: 0;
-
 }
 
 *::selection {
@@ -15,6 +15,11 @@
 html {
   scroll-behavior: smooth;
   background: #fefefe;
+}
+
+html,
+main {
+  height: 100%;
 }
 
 .container {
@@ -57,8 +62,6 @@ html {
   display: block;
 }
 
-
-
 /* hero */
 
 .hero {
@@ -94,7 +97,7 @@ html {
   // dropdown
 
   #dropdown {
-    padding-bottom: 44px; 
+    padding-bottom: 44px;
   }
   #content {
     position: absolute;
@@ -127,7 +130,6 @@ html {
 
   .input__placeholder {
     text-align: center;
-
   }
 
   .structure > div {
@@ -139,26 +141,24 @@ html {
     background-color: #fff;
     padding: 16px 0;
   }
-  
+
   .structure > div:hover {
     background-color: #d20000;
     color: #fafafa;
     cursor: pointer;
   }
-  
+
   .structure > div > h5 {
     font-family: "Exo 2", sans-serif;
     margin-right: 4px;
   }
-  
+
   .index {
     z-index: -999;
   }
   .hide {
     display: none;
- 
   }
-
 
   .cont_select_int {
     position: absolute;

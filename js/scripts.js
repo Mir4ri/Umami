@@ -1,60 +1,69 @@
 // add to cart
 
-btnToCart = document.getElementsByClassName("addToCart");
 notification = document.getElementById("notification");
-// optionValue = document.getElementsByTagName("option").value;
+btnToCart = document.getElementsByClassName("addToCart");
+sushiName = document.getElementsByClassName("menuItem__top__name");
+sushiPrice = document.getElementsByClassName("menuItem__top__price");
 sushiItem = document.getElementsByClassName("sushi");
+sushiContainer = document.getElementById("menu");
 
-for (var i = 0; i < btnToCart.length; i++) {
-  btnToCart[i].addEventListener("click", function() {
-    notification.classList.add("active");
-    setTimeout(() => notification.classList.remove("active"), 790);
-  });
-}
+sushiContainer.onclick = function(event) {
+  btnCart = event.target.closest(".addToCart");
+  if (!btnCart) return;
+  notification.classList.add("active");
+  localStorage.setItem(
+    event.target.closest(".menuItem__top").querySelector(".menuItem__top__name").textContent,
+    event.target.parentNode.closest("span").textContent
+  );
+  document.getElementById("localLength").innerHTML = localStorage.length;
+  setTimeout(() => notification.classList.remove("active"), 790);
+};
+
+document.getElementById("localLength").innerHTML = localStorage.length;
 
 const kindsOfSushi = [
   {
     id: 0,
-    name: 'ФУТОМАКІ'
+    name: "ФУТОМАКІ"
   },
   {
     id: 1,
-    name: 'УРАМАКІ'
+    name: "УРАМАКІ"
   },
   {
     id: 2,
-    name: 'ХОСОМАКІ'
+    name: "ХОСОМАКІ"
   },
   {
     id: 3,
-    name: 'ГУНКАН'
+    name: "ГУНКАН"
   },
   {
     id: 4,
-    name: 'НІГІРІ'
+    name: "НІГІРІ"
   },
   {
     id: 5,
-    name: 'САЛАТИ'
+    name: "САЛАТИ"
   },
   {
     id: 6,
-    name: 'МІСО СУП'
+    name: "МІСО СУП"
   },
   {
     id: 7,
-    name: 'САШИМІ'
+    name: "САШИМІ"
   },
   {
     id: 8,
-    name: 'НАПОЇ'
+    name: "НАПОЇ"
   }
-]
+];
 
 // dropdown
 
 const dropdownIcon = () => {
-  const dropdown = document.createElement('span');
+  const dropdown = document.createElement("span");
   dropdown.innerHTML = `<svg width="14px" height="7px" viewBox="0 0 10 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="Delivery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
     <g id="Transactions-(Landing)" transform="translate(-1360.000000, -29.000000)" fill="#CDCFD3" fill-rule="nonzero">
@@ -65,10 +74,9 @@ const dropdownIcon = () => {
     </g>
 </svg>`;
   return dropdown;
-}
+};
 
 const printArea = document.querySelector("#content");
-
 
 const dropdown = () => {
   const component = document.createElement("div");
@@ -94,7 +102,7 @@ const createInput = () => {
   const placeholder = document.createElement("p");
   placeholder.style.fontWeight = 300;
   placeholder.textContent = "Оберіть тип суш";
-  placeholder.classList.add('placeholder')
+  placeholder.classList.add("placeholder");
 
   // Appends the placeholder and chevron
   inputPlaceholder.appendChild(placeholder);
@@ -107,26 +115,25 @@ const createInput = () => {
 const showDropdown = () => {
   const structure = document.createElement("div");
   structure.classList.add("structure", "hide");
-  
+
   kindsOfSushi.forEach(kindOfSushi => {
-    const {
-      id,
-      name
-    } = kindOfSushi;
+    const { id, name } = kindOfSushi;
     const option = document.createElement("div");
-    
+
     option.addEventListener("click", () => {
-      selectOption(name)
+      selectOption(name);
       // render menu
       for (var i = 0; i < sushiItem.length; i++) {
-        id === i ? sushiItem[i].classList.add("activeKind") : sushiItem[i].classList.remove("activeKind");
+        id === i
+          ? sushiItem[i].classList.add("activeKind")
+          : sushiItem[i].classList.remove("activeKind");
       }
       // fin render menu
     });
     option.setAttribute("id", id);
 
     const n = document.createElement("h5");
-    n.style.fontFamily = "Exo 2", "sans-serif";
+    (n.style.fontFamily = "Exo 2"), "sans-serif";
     n.style.fontWeight = 300;
     n.style.letterSpacing = "0.15em";
     n.textContent = name;
@@ -150,17 +157,15 @@ const toggleDropdown = () => {
   input.classList.toggle("input__active");
 };
 
-const selectOption = (name) => {
-  const text = document.querySelector('.placeholder');
+const selectOption = name => {
+  const text = document.querySelector(".placeholder");
   text.textContent = name;
-  text.classList.add('input__selected')
+  text.classList.add("input__selected");
   toggleDropdown();
 };
 
 dropdown();
 
-
 // fin dropdown
 
 // render kind of sushi
-

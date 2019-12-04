@@ -94,6 +94,41 @@ header .container .cart {
           justify-content: flex-end;
 }
 
+header .container .cart #localLength {
+  position: relative;
+  left: -20px;
+  background: #d20000;
+  height: 28px;
+  width: 30px;
+  text-align: center;
+  vertical-align: center;
+  padding-top: 2px;
+  color: #fefefe;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+#activeCart {
+  display: none;
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(33, 33, 33, 0.5);
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#activeCart .cartContainer {
+  width: 400px;
+  margin: 0 auto;
+  background-color: #fafafa;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
 * {
   font-size: 20px;
   font-family: "Exo 2", sans-serif;
@@ -112,6 +147,11 @@ header .container .cart {
 html {
   scroll-behavior: smooth;
   background: #fefefe;
+}
+
+html,
+main {
+  height: 100%;
 }
 
 .container {
