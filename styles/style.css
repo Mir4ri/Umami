@@ -110,6 +110,7 @@ header .container .cart #localLength {
 }
 
 .activeCart {
+  cursor: pointer;
   display: none;
   z-index: 999;
   position: absolute;
@@ -121,6 +122,7 @@ header .container .cart #localLength {
 }
 
 .activeCart .cartContainer {
+  cursor: auto;
   position: relative;
   background-color: #fafafa;
   -webkit-transform: translateY(-50%);

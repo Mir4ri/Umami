@@ -3,10 +3,10 @@ btnToCart = document.getElementsByClassName("addToCart");
 sushiName = document.getElementsByClassName("menuItem__top__name");
 sushiPrice = document.getElementsByClassName("menuItem__top__price");
 sushiItem = document.getElementsByClassName("sushi");
+setsContainer = document.getElementsByClassName("sets")[0];
 sushiContainer = document.getElementById("menu");
 btnPopup = document.getElementById("cart-js");
 popup = document.getElementById("activeCart-js");
-
 
 const kindsOfSushi = [
   {
@@ -155,32 +155,77 @@ dropdown();
 
 // fin dropdown
 
-
-
 // add to cart
+document.getElementById("localLength").innerHTML = localStorage.length;
+
+// sushi
+
 sushiContainer.onclick = function(event) {
   btnCart = event.target.closest(".addToCart");
   if (!btnCart) return;
   notification.classList.add("active");
   localStorage.setItem(
-    event.target.closest(".menuItem__top").querySelector(".menuItem__top__name").textContent,
+    event.target.closest(".menuItem__top").querySelector(".menuItem__top__name")
+      .textContent,
     event.target.parentNode.closest("span").textContent
   );
   document.getElementById("localLength").innerHTML = localStorage.length;
   setTimeout(() => notification.classList.remove("active"), 790);
 };
 
-document.getElementById("localLength").innerHTML = localStorage.length;
+// sets
+
+setsContainer.onclick = function(event) {
+  btnCart = event.target.closest(".addToCart");
+  if (!btnCart) return;
+  notification.classList.add("active");
+  localStorage.setItem(
+    event.target.closest(".setItem__top").querySelector(".setItem__top__name")
+      .textContent,
+    event.target
+      .closest(".setItem")
+      .querySelector(".setItem__description__price").textContent
+  );
+
+  document.getElementById("localLength").innerHTML = localStorage.length;
+  setTimeout(() => notification.classList.remove("active"), 790);
+};
 
 // fin add to cart
 
 // cart pop-up
+function fillCart() {
+  var t = "";
+  var sum = 0;
+  for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    var item = JSON.parse(localStorage.getItem(key));
+    t += '<tr class="cartRow">';
+    // t += '<td class="index">' + (Number(i) + 1) + "</td>";
+    t += '<td class="nameSushi">' + key + "</td>";
+    t += '<td class="priceSushi">' + item + "  ₴" + "</td>";
+    t += "</tr>";
+    sum += item;
+  }
+  document.getElementById("fillTable-js").innerHTML = t;
+  document.getElementById("sum-js").innerHTML = "Сума: " + sum;
+}
+
+clearCart = document.getElementById("clearCart-js");
+
+clearCart.onclick = () => {
+  localStorage.clear();
+  document.getElementById("localLength").innerHTML = localStorage.length;
+  fillCart();
+};
 
 btnPopup.onclick = function() {
   document.querySelector("html").style.overflow = "hidden";
   popup.style.display = "block";
-  // popup.scrollIntoView();
-  document.getElementById("cartContainer-js").scrollIntoView({behavior: 'smooth', block: 'center'} );
+  document
+    .getElementById("cartContainer-js")
+    .scrollIntoView({ behavior: "smooth", block: "center" });
+  fillCart();
 };
 
 window.onclick = function(event) {
@@ -190,14 +235,9 @@ window.onclick = function(event) {
   }
 };
 
-
-const liMaker = text => {
-  const li = document.createElement('li')
-  li.textContent = text
-  ul.appendChild(li)
-}
-
-const data = JSON.parse(localStorage.getItem('items'))
-data.forEach(item => {
-  liMaker(item)
-})
+// for (var i = 0; i < localStorage.length; i++) {
+//   var key = localStorage.key(i);
+//   var item = JSON.parse(localStorage.getItem(key));
+//   console.log(key);
+//   console.log(item);
+// }
