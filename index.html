@@ -34,7 +34,7 @@
           <a href="#menu">меню</a>
           <a href="#footer">контакти</a>
         </nav>
-        <span class="cart"><img src="./img/cart.svg" class="iconCart" alt="cart" /><sup id="localLength">0</sup></span>
+        <span class="cart" id="cart-js"><img src="./img/cart.svg" class="iconCart" alt="cart" /><sup id="localLength">0</sup></span>
         
       </div>
     </header>
@@ -756,17 +756,23 @@
     >
     </iframe>
     </main>
-       <section id="activeCart">
-      <div class="cartContainer">---</div>
+       <section class="activeCart" id="activeCart-js">
+      <div class="cartContainer container" id="cartContainer-js">
+        <div class="list">
+          <h1>Корзина</h1>
+        </div>
+      </div>
     </section>
     <footer id="footer">
       <div class="info container">
         <div class="deliveryAndBook">
           <h2 class="dbTitle">Доставка та бронювання:</h2>
-          <span><img src="./img/viber.svg" alt="viber" />+380 68 409 2581</span>
-          <span
-            ><img src="./img/insta.svg" alt="instagram" />umami.sushi.if</span
-          >
+          <span>
+            <img src="./img/viber.svg" alt="viber" />+380 68 409 2581
+          </span>
+          <span>
+            <img src="./img/insta.svg" alt="instagram" />umami.sushi.if
+          </span>
           <span>Всі права захищено 2019</span>
           <span
             >Powered with

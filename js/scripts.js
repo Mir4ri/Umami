@@ -1,25 +1,12 @@
-// add to cart
-
 notification = document.getElementById("notification");
 btnToCart = document.getElementsByClassName("addToCart");
 sushiName = document.getElementsByClassName("menuItem__top__name");
 sushiPrice = document.getElementsByClassName("menuItem__top__price");
 sushiItem = document.getElementsByClassName("sushi");
 sushiContainer = document.getElementById("menu");
+btnPopup = document.getElementById("cart-js");
+popup = document.getElementById("activeCart-js");
 
-sushiContainer.onclick = function(event) {
-  btnCart = event.target.closest(".addToCart");
-  if (!btnCart) return;
-  notification.classList.add("active");
-  localStorage.setItem(
-    event.target.closest(".menuItem__top").querySelector(".menuItem__top__name").textContent,
-    event.target.parentNode.closest("span").textContent
-  );
-  document.getElementById("localLength").innerHTML = localStorage.length;
-  setTimeout(() => notification.classList.remove("active"), 790);
-};
-
-document.getElementById("localLength").innerHTML = localStorage.length;
 
 const kindsOfSushi = [
   {
@@ -168,4 +155,49 @@ dropdown();
 
 // fin dropdown
 
-// render kind of sushi
+
+
+// add to cart
+sushiContainer.onclick = function(event) {
+  btnCart = event.target.closest(".addToCart");
+  if (!btnCart) return;
+  notification.classList.add("active");
+  localStorage.setItem(
+    event.target.closest(".menuItem__top").querySelector(".menuItem__top__name").textContent,
+    event.target.parentNode.closest("span").textContent
+  );
+  document.getElementById("localLength").innerHTML = localStorage.length;
+  setTimeout(() => notification.classList.remove("active"), 790);
+};
+
+document.getElementById("localLength").innerHTML = localStorage.length;
+
+// fin add to cart
+
+// cart pop-up
+
+btnPopup.onclick = function() {
+  document.querySelector("html").style.overflow = "hidden";
+  popup.style.display = "block";
+  // popup.scrollIntoView();
+  document.getElementById("cartContainer-js").scrollIntoView({behavior: 'smooth', block: 'center'} );
+};
+
+window.onclick = function(event) {
+  if (event.target === popup) {
+    popup.style.display = "none";
+    document.querySelector("html").style.overflowY = "scroll";
+  }
+};
+
+
+const liMaker = text => {
+  const li = document.createElement('li')
+  li.textContent = text
+  ul.appendChild(li)
+}
+
+const data = JSON.parse(localStorage.getItem('items'))
+data.forEach(item => {
+  liMaker(item)
+})
