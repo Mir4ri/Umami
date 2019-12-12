@@ -40,10 +40,6 @@ const kindsOfSushi = [
   {
     id: 7,
     name: "САШИМІ"
-  },
-  {
-    id: 8,
-    name: "НАПОЇ"
   }
 ];
 
@@ -164,9 +160,14 @@ sushiContainer.onclick = function(event) {
   btnCart = event.target.closest(".addToCart");
   if (!btnCart) return;
   notification.classList.add("active");
+  console.log();
   localStorage.setItem(
-    event.target.closest(".menuItem__top").querySelector(".menuItem__top__name")
-      .textContent,
+    event.target.closest(".sushi").querySelector(".itemTitle__name")
+      .textContent +
+      " " +
+      event.target
+        .closest(".menuItem__top")
+        .querySelector(".menuItem__top__name").textContent,
     event.target.parentNode.closest("span").textContent
   );
   document.getElementById("localLength").innerHTML = localStorage.length;
@@ -201,14 +202,13 @@ function fillCart() {
     var key = localStorage.key(i);
     var item = JSON.parse(localStorage.getItem(key));
     t += '<tr class="cartRow">';
-    // t += '<td class="index">' + (Number(i) + 1) + "</td>";
     t += '<td class="nameSushi">' + key + "</td>";
-    t += '<td class="priceSushi">' + item + "  ₴" + "</td>";
+    t += '<td class="priceSushi">' + item + "₴" + "</td>";
     t += "</tr>";
     sum += item;
   }
   document.getElementById("fillTable-js").innerHTML = t;
-  document.getElementById("sum-js").innerHTML = "Сума: " + sum;
+  document.getElementById("sum-js").innerHTML = "Сума: " + sum + "₴";
 }
 
 clearCart = document.getElementById("clearCart-js");
@@ -235,9 +235,47 @@ window.onclick = function(event) {
   }
 };
 
-// for (var i = 0; i < localStorage.length; i++) {
-//   var key = localStorage.key(i);
-//   var item = JSON.parse(localStorage.getItem(key));
-//   console.log(key);
-//   console.log(item);
-// }
+function cartLog() {
+  var keys = [];
+  for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    keys.push(key);
+  }
+  return keys;
+}
+
+function checkValue() {
+  var FormValue =
+    "Ім'я: " +
+    document.querySelector("#formName").value +
+    " Телефон: " +
+    document.querySelector("#formPhone").value +
+    " Вулиця: " +
+    document.querySelector("#formStreet").value +
+    " Будинок: " +
+    document.querySelector("#formHouse").value +
+    " Квартира: " +
+    document.querySelector("#formKv").value +
+    " Примітка: " +
+    document.querySelector("#describe").value +
+    " Замовлення: ";
+  return FormValue;
+}
+
+readyMail = () => {
+  return checkValue() + cartLog();
+};
+
+// send mail
+
+function sendMail() {
+  if (!localStorage.length == "0") {
+    Email.send({
+      SecureToken: "c9ce6b12-bf13-4138-9f8e-b0871268bcb1",
+      To: "leobuchko@gmail.com",
+      From: "gtasanbuchko@gmail.com",
+      Subject: "Замовлення",
+      Body: readyMail()
+    }).then(message => alert(message));
+  }
+}

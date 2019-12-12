@@ -205,7 +205,6 @@ main {
     }
   }
 
-
   .selected_option {
     font-size: 1.2em;
     padding: 14px 2%;
@@ -250,6 +249,7 @@ main {
       .menuItem__top {
         margin-bottom: 8px;
         .menuItem__top__name {
+          text-transform: capitalize;
           font-size: 1.2em;
           font-weight: 600;
           letter-spacing: 0.03em;

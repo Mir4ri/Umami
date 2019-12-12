@@ -1,532 +1,845 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Umami Sushi</title>
-    <link rel="shortcut icon" href="./favicon.png" type="image/png" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Exo+2:300,600,600i&display=swap&subset=cyrillic"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <picture class="logo">
-          <source media="(min-width: 1200px)" srcset="./img/desktop_logo.svg" />
-          <img alt="logo" />
-        </picture>
-        <nav>
-          <a href="#delivery">досткавка</a>
-          <a href="#menu">меню</a>
-          <a href="#footer">контакти</a>
-        </nav>
-        <span class="cart" id="cart-js"><img src="./img/cart.svg" class="iconCart" alt="cart" /><sup id="localLength">0</sup></span>
-        
-      </div>
-    </header>
 
-    <section id="notification">
-      Додано в кошик
-    </section>
-    <main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Umami Sushi</title>
+  <link rel="shortcut icon" href="./favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css?family=Exo+2:300,600,600i&display=swap&subset=cyrillic"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <picture class="logo">
+        <source media="(min-width: 1200px)" srcset="./img/desktop_logo.svg" />
+        <img alt="logo" />
+      </picture>
+      <nav>
+        <a href="#delivery">доставка</a>
+        <a href="#menu">меню</a>
+        <a href="#footer">контакти</a>
+      </nav>
+      <span class="cart" id="cart-js"><img src="./img/cart.svg" class="iconCart" alt="cart" /><sup
+          id="localLength">0</sup></span>
+
+    </div>
+  </header>
+
+  <section id="notification">
+    Додано в кошик
+  </section>
+  <main>
     <div class="hero"></div>
     <section class="menu container" id="menu">
       <h1 class="title">МЕНЮ</h1>
       <div id="dropdown">
         <div id="content"></div>
       </div>
-    </div>
-    <div class="sushi activeKind">
-      <span class="itemTitle flex Futomaki">
-      <span class="itemTitle__name">ФУТОМАКІ</span>
-      <span class="itemTitle__quantity">x6</span>
-    </span>
-      <div class="gridWrap" >
-      <div class="menuItem">
-        <span class="menuItem__top flex">
-          <span class="menuItem__top__name">З креветкою в темпурі</span>
-          <span class="menuItem__top__price">
-            <span>140</span>
-            <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-          </span>
+      </div>
+      <div class="sushi activeKind">
+        <span class="itemTitle flex Futomaki">
+          <span class="itemTitle__name">Футомакі</span>
+          <span class="itemTitle__quantity">x6</span>
         </span>
-        <span class="menuItem__bottom">Креветка в темпурі, Маринований гарбуз, Дайкон, Свіжий огірок </span>
-      </div>
-      <div class="menuItem">
-        <span class="menuItem__top flex">
-          <span class="menuItem__top__name">З масляною</span>
-          <span class="menuItem__top__price">
-            <span>125</span>
-            <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-          </span>
-        </span>
-        <span class="menuItem__bottom">Масляна, Стигле авокадо, Свіжий огірок, Маринований дайкон</span>
-      </div>
-      <div class="menuItem">
-        <span class="menuItem__top flex">
-          <span class="menuItem__top__name">З кальмаром в темпурі</span>
-          <span class="menuItem__top__price">
-            <span>120</span>
-            <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-          </span>
-        </span>
-        <span class="menuItem__bottom">Кальмар в темпурі, Свіжий огірок, Маринований гарбуз, Дайкон </span>
-      </div>
-      <div class="menuItem">
-        <span class="menuItem__top flex">
-          <span class="menuItem__top__name">З тунцем</span>
-          <span class="menuItem__top__price">
-            <span>150</span>
-            <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-          </span>
-        </span>
-        <span class="menuItem__bottom">Тунець, Стигле авокадо, Свіжий огірок, Маринований дайкон    </span>
-      </div>
-      <div class="menuItem">
-        <span class="menuItem__top flex">
-          <span class="menuItem__top__name">З лососем</span>
-          <span class="menuItem__top__price">
-            <span>140</span>
-            <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-          </span>
-        </span>
-        <span class="menuItem__bottom">Лосось, Свіжий огірок, Стигле авокадо, Маринований дайкон  </span>
-      </div>
-      <div class="menuItem">
-        <span class="menuItem__top flex">
-          <span class="menuItem__top__name">З крабовою паличкою</span>
-          <span class="menuItem__top__price">
-            <span>95</span>
-            <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-          </span>
-        </span>
-        <span class="menuItem__bottom">Крабова паличка, Свіжий огірок, Маринований гарбуз, Дайкон  </span>
-      </div>
-      <div class="menuItem">
-        <span class="menuItem__top flex">
-          <span class="menuItem__top__name">Філадельфія з лососем</span>
-          <span class="menuItem__top__price">
-            <span>140</span>
-            <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-          </span>
-        </span>
-        <span class="menuItem__bottom">Лосось, Сир Філадельфія, Стигле авокадо, Свіжий огірок, Маринований гарбуз, Омлет</span>
-      </div>
-      <div class="menuItem">
-        <span class="menuItem__top flex">
-          <span class="menuItem__top__name">Вегетаріанський</span>
-          <span class="menuItem__top__price">
-            <span>115</span>
-            <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-          </span>
-        </span>
-        <span class="menuItem__bottom">Стигле авокадо, Свіжий огірок, Маринований гарбуз, Дайкон  </span>
-      </div>
-      <div class="menuItem">
-        <span class="menuItem__top flex">
-          <span class="menuItem__top__name">Тар-Тар з тунця</span>
-          <span class="menuItem__top__price">
-            <span>155</span>
-            <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-          </span>
-        </span>
-        <span class="menuItem__bottom">Тунець, Цибуля порей, Спеції</span>
-      </div>
-      <div class="menuItem">
-        <span class="menuItem__top flex">
-          <span class="menuItem__top__name">З грильованим лососем</span>
-          <span class="menuItem__top__price">
-            <span>145</span>
-            <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-          </span>
-        </span>
-        <span class="menuItem__bottom">Печений Лосось, Сир Філадельфія, Свіжий огірок, Маринований гарбуз </span>
-      </div>
-      <div class="menuItem">
-        <span class="menuItem__top flex">
-          <span class="menuItem__top__name">З вугрем</span>
-          <span class="menuItem__top__price">
-            <span>180</span>
-            <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-          </span>
-        </span>
-        <span class="menuItem__bottom">Вугор, Свіжий огірок, Стигле авокадо, Маринований гарбуз</span>
-      </div>
-      <div class="menuItem">
-        <span class="menuItem__top flex">
-          <span class="menuItem__top__name">Тар-Тар з лосося</span>
-          <span class="menuItem__top__price">
-            <span>135</span>
-            <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-          </span>
-        </span>
-        <span class="menuItem__bottom">Лосось, Цибуля порей, Спеції</span>
-      </div>
-    </div>
-    <p class="description">
-      <b>Футомакі —</b> найбільші з усіх видів і з найбільшим набором начинок
-      всередині – це є Футомакі. Використовуватися в якості начинки можуть
-      гриби, омлет, риба і її ікра, а також морепродукти - креветки, краби,
-      кальмари, восьминоги. Овочі, які в різних комбінаціях додаються -
-      дайкон, гарбуз, свіжий огірок, різні сорти салатів, цибуля порей,
-      авокадо.
-    </p>
-    <div class="gallery flex">
-      <img src="./img/1.jpg" alt="gallery" />
-      <img src="./img/2.jpg" alt="gallery" />
-      <img src="./img/3.jpg" alt="gallery" />
-    </div>
-    </div>
-      
-      <div class="sushi">
-        <span
-        class="itemTitle flex"
-      >
-        <span class="itemTitle__name">УРАМАКІ</span>
-        <span class="itemTitle__quantity">x8</span>
-      </span>
-      <div
-        class="gridWrap"
-      >
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">З грильованим лососем</span>
-            <span class="menuItem__top__price">
-              <span>165</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+        <div class="gridWrap">
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з креветкою в темпурі</span>
+              <span class="menuItem__top__price">
+                <span>140</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
             </span>
-          </span>
-          <span class="menuItem__bottom">Лосось обпечений, Сир Філадельфія, Цибуля порей, Свіжий огірок, Маринований гарбуз, Дайкон</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">З креветкою в темпурі</span>
-            <span class="menuItem__top__price">
-              <span>95</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+            <span class="menuItem__bottom">Креветка в темпурі, Маринований гарбуз, Дайкон, Свіжий огірок </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з масляною</span>
+              <span class="menuItem__top__price">
+                <span>125</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
             </span>
-          </span>
-          <span class="menuItem__bottom">Креветка в темпурі, Свіжий огірок, Маринований гарбуз, Кунжут </span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Філадельфія з вугрем</span>
-            <span class="menuItem__top__price">
-              <span>185</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+            <span class="menuItem__bottom">Масляна, Стигле авокадо, Свіжий огірок, Маринований дайкон</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з кальмаром в темпурі</span>
+              <span class="menuItem__top__price">
+                <span>120</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
             </span>
-          </span>
-          <span class="menuItem__bottom">Вугор, Сир Філадельфія, Ікра, Кунжут</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Каліфорнія класична</span>
-            <span class="menuItem__top__price">
-              <span>65</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+            <span class="menuItem__bottom">Кальмар в темпурі, Свіжий огірок, Маринований гарбуз, Дайкон </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з тунцем</span>
+              <span class="menuItem__top__price">
+                <span>150</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
             </span>
-          </span>
-          <span class="menuItem__bottom">Крабова паличка, Стигле авокадо, Свіжий огірок, Кунжут</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Каліфорнія з лососем</span>
-            <span class="menuItem__top__price">
-              <span>135</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+            <span class="menuItem__bottom">Тунець, Стигле авокадо, Свіжий огірок, Маринований дайкон </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з лососем</span>
+              <span class="menuItem__top__price">
+                <span>140</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
             </span>
-          </span>
-          <span class="menuItem__bottom">Лосось, Крабова паличка, Свіжий огірок, Стигле авокадо, Маринований дайкон</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Дракон</span>
-            <span class="menuItem__top__price">
-              <span>185</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+            <span class="menuItem__bottom">Лосось, Свіжий огірок, Стигле авокадо, Маринований дайкон </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з крабовою паличкою</span>
+              <span class="menuItem__top__price">
+                <span>95</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
             </span>
-          </span>
-          <span class="menuItem__bottom">Вугор, Свіжий огірок, Стигле авокадо, Ікра, Соус Унагі, Кунжут </span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">З креветкою та манго</span>
-            <span class="menuItem__top__price">
-              <span>110</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+            <span class="menuItem__bottom">Крабова паличка, Свіжий огірок, Маринований гарбуз, Дайкон </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">філадельфія з лососем</span>
+              <span class="menuItem__top__price">
+                <span>140</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
             </span>
-          </span>
-          <span class="menuItem__bottom">Креветка в темпурі, Свіжий огірок, Маринований гарбуз, Стигле манго, Спеції</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">З лососем та персиком</span>
-            <span class="menuItem__top__price">
-              <span>120</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+            <span class="menuItem__bottom">Лосось, Сир Філадельфія, Стигле авокадо, Свіжий огірок, Маринований гарбуз,
+              Омлет</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">вегетаріанський</span>
+              <span class="menuItem__top__price">
+                <span>115</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
             </span>
-          </span>
-          <span class="menuItem__bottom">Печений Лосось, Свіжий огірок, Маринований гарбуз, Персик</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Гейша з лососем та авокадо</span>
-            <span class="menuItem__top__price">
-              <span>170</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+            <span class="menuItem__bottom">Стигле авокадо, Свіжий огірок, Маринований гарбуз, Дайкон </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">тар-тар з тунця</span>
+              <span class="menuItem__top__price">
+                <span>155</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
             </span>
-          </span>
-          <span class="menuItem__bottom">Лосось, Стигле авокадо, Маринований дайкон, Свіжий огірок, Ікра</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Філадельфія з лососем</span>
-            <span class="menuItem__top__price">
-              <span>160</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+            <span class="menuItem__bottom">Тунець, Цибуля порей, Спеції</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з грильованим лососем</span>
+              <span class="menuItem__top__price">
+                <span>145</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
             </span>
-          </span>
-          <span class="menuItem__bottom">Лосось, Сир Філадельфія, Свіжий огірок, Стигле авокадо, Кунжут</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">З пікантним лососем</span>
-            <span class="menuItem__top__price">
-              <span>130</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+            <span class="menuItem__bottom">Печений Лосось, Сир Філадельфія, Свіжий огірок, Маринований гарбуз </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з вугрем</span>
+              <span class="menuItem__top__price">
+                <span>180</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
             </span>
-          </span>
-          <span class="menuItem__bottom">Лосось, Стигле авокадо, Цибуля порей, Спеції</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">З пікантним тунцем</span>
-            <span class="menuItem__top__price">
-              <span>140</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+            <span class="menuItem__bottom">Вугор, Свіжий огірок, Стигле авокадо, Маринований гарбуз</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">тар-тар з лосося</span>
+              <span class="menuItem__top__price">
+                <span>135</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
             </span>
-          </span>
-          <span class="menuItem__bottom">Тунець, Стигле авокадо, Цибуля порей, Спеції</span>
+            <span class="menuItem__bottom">Лосось, Цибуля порей, Спеції</span>
+          </div>
         </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Каліфорнія мікс</span>
-            <span class="menuItem__top__price">
-              <span>155</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-            </span>
-          </span>
-          <span class="menuItem__bottom">Тунець, Лосось, Вугор, Масляна, Тигрова креветка, Свіжий огірок, Крабова паличка, Стигле авокадо, Ікра </span>
+        <p class="description">
+          <b>Футомакі —</b> найбільші з усіх видів і з найбільшим набором начинок
+          всередині – це є Футомакі. Використовуватися в якості начинки можуть
+          гриби, омлет, риба і її ікра, а також морепродукти - креветки, краби,
+          кальмари, восьминоги. Овочі, які в різних комбінаціях додаються -
+          дайкон, гарбуз, свіжий огірок, різні сорти салатів, цибуля порей,
+          авокадо.
+        </p>
+        <div class="gallery flex">
+          <img src="./img/1.jpg" alt="gallery" />
+          <img src="./img/2.jpg" alt="gallery" />
+          <img src="./img/3.jpg" alt="gallery" />
         </div>
-      <div class="menuItem">
-        <span class="menuItem__top flex">
-          <span class="menuItem__top__name">З м’якопанцерним крабом</span>
-          <span class="menuItem__top__price">
-            <span>285</span>
-            <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-          </span>
-        </span>
-        <span class="menuItem__bottom">М’якопанцерний краб, Стигле авокадо, Ікра Масаго, Свіжий огірок</span>
-      </div>
-    </div>
-      
-      <p class="description">
-        <b>Футомакі —</b> найбільші з усіх видів і з найбільшим набором начинок
-        всередині – це є Футомакі. Використовуватися в якості начинки можуть
-        гриби, омлет, риба і її ікра, а також морепродукти - креветки, краби,
-        кальмари, восьминоги. Овочі, які в різних комбінаціях додаються -
-        дайкон, гарбуз, свіжий огірок, різні сорти салатів, цибуля порей,
-        авокадо.
-      </p>
-      <div class="gallery flex">
-        <img src="./img/1.jpg" alt="gallery" />
-        <img src="./img/2.jpg" alt="gallery" />
-        <img src="./img/3.jpg" alt="gallery" />
-      </div>
-      
-    
       </div>
 
-      
+      <div class="sushi">
+        <span class="itemTitle flex">
+          <span class="itemTitle__name">Урамакі</span>
+          <span class="itemTitle__quantity">x8</span>
+        </span>
+        <div class="gridWrap">
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з грильованим лососем</span>
+              <span class="menuItem__top__price">
+                <span>165</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+            <span class="menuItem__bottom">Лосось обпечений, Сир Філадельфія, Цибуля порей, Свіжий огірок, Маринований
+              гарбуз, Дайкон</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з креветкою в темпурі</span>
+              <span class="menuItem__top__price">
+                <span>95</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+            <span class="menuItem__bottom">Креветка в темпурі, Свіжий огірок, Маринований гарбуз, Кунжут </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">філадельфія з вугрем</span>
+              <span class="menuItem__top__price">
+                <span>185</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+            <span class="menuItem__bottom">Вугор, Сир Філадельфія, Ікра, Кунжут</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">каліфорнія класична</span>
+              <span class="menuItem__top__price">
+                <span>65</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+            <span class="menuItem__bottom">Крабова паличка, Стигле авокадо, Свіжий огірок, Кунжут</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">каліфорнія з лососем</span>
+              <span class="menuItem__top__price">
+                <span>135</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+            <span class="menuItem__bottom">Лосось, Крабова паличка, Свіжий огірок, Стигле авокадо, Маринований
+              дайкон</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">дракон</span>
+              <span class="menuItem__top__price">
+                <span>185</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+            <span class="menuItem__bottom">Вугор, Свіжий огірок, Стигле авокадо, Ікра, Соус Унагі, Кунжут </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з креветкою та манго</span>
+              <span class="menuItem__top__price">
+                <span>110</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+            <span class="menuItem__bottom">Креветка в темпурі, Свіжий огірок, Маринований гарбуз, Стигле манго,
+              Спеції</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">З лососем та персиком</span>
+              <span class="menuItem__top__price">
+                <span>120</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+            <span class="menuItem__bottom">Печений Лосось, Свіжий огірок, Маринований гарбуз, Персик</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">Гейша з лососем та авокадо</span>
+              <span class="menuItem__top__price">
+                <span>170</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+            <span class="menuItem__bottom">Лосось, Стигле авокадо, Маринований дайкон, Свіжий огірок, Ікра</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">Філадельфія з лососем</span>
+              <span class="menuItem__top__price">
+                <span>160</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+            <span class="menuItem__bottom">Лосось, Сир Філадельфія, Свіжий огірок, Стигле авокадо, Кунжут</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">З пікантним лососем</span>
+              <span class="menuItem__top__price">
+                <span>130</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+            <span class="menuItem__bottom">Лосось, Стигле авокадо, Цибуля порей, Спеції</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">З пікантним тунцем</span>
+              <span class="menuItem__top__price">
+                <span>140</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+            <span class="menuItem__bottom">Тунець, Стигле авокадо, Цибуля порей, Спеції</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">Каліфорнія мікс</span>
+              <span class="menuItem__top__price">
+                <span>155</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+            <span class="menuItem__bottom">Тунець, Лосось, Вугор, Масляна, Тигрова креветка, Свіжий огірок, Крабова
+              паличка, Стигле авокадо, Ікра </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">З м’якопанцерним крабом</span>
+              <span class="menuItem__top__price">
+                <span>285</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+            <span class="menuItem__bottom">М’якопанцерний краб, Стигле авокадо, Ікра Масаго, Свіжий огірок</span>
+          </div>
+        </div>
+
+        <p class="description">
+          <b>Футомакі —</b> найбільші з усіх видів і з найбільшим набором начинок
+          всередині – це є Футомакі. Використовуватися в якості начинки можуть
+          гриби, омлет, риба і її ікра, а також морепродукти - креветки, краби,
+          кальмари, восьминоги. Овочі, які в різних комбінаціях додаються -
+          дайкон, гарбуз, свіжий огірок, різні сорти салатів, цибуля порей,
+          авокадо.
+        </p>
+        <div class="gallery flex">
+          <img src="./img/1.jpg" alt="gallery" />
+          <img src="./img/2.jpg" alt="gallery" />
+          <img src="./img/3.jpg" alt="gallery" />
+        </div>
+      </div>
+
+
+      <div class="sushi">
+        <span class="itemTitle flex">
+          <span class="itemTitle__name">Хосомакі</span>
+          <span class="itemTitle__quantity">x6</span>
+        </span>
+        <div class="gridWrap">
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з масляною</span>
+              <span class="menuItem__top__price">
+                <span>70</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з авокадо</span>
+              <span class="menuItem__top__price">
+                <span>55</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з тигровою креветкою</span>
+              <span class="menuItem__top__price">
+                <span>75</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з маринованим гарбузом</span>
+              <span class="menuItem__top__price">
+                <span>75</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з огірком</span>
+              <span class="menuItem__top__price">
+                <span>45</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з пікантним лососем</span>
+              <span class="menuItem__top__price">
+                <span>70</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з пікантним тунцем</span>
+              <span class="menuItem__top__price">
+                <span>85</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з маринованим дайконом</span>
+              <span class="menuItem__top__price">
+                <span>50</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з тунцем</span>
+              <span class="menuItem__top__price">
+                <span>80</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з лососем</span>
+              <span class="menuItem__top__price">
+                <span>60</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з вугрем</span>
+              <span class="menuItem__top__price">
+                <span>90</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з грильованим лососем</span>
+              <span class="menuItem__top__price">
+                <span>155</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+        </div>
+        <p class="description">
+          <b>Хосомакі —</b> суші закручені у водорості норі. Від японського слова макі — «закручувати»
+        </p>
+        <div class="gallery flex">
+          <img src="./img/1.jpg" alt="gallery" />
+          <img src="./img/2.jpg" alt="gallery" />
+          <img src="./img/3.jpg" alt="gallery" />
+        </div>
+      </div>
+      <div class="sushi">
+        <span class="itemTitle flex">
+          <span class="itemTitle__name">Гункан</span>
+          <span class="itemTitle__quantity">x2</span>
+        </span>
+        <div class="gridWrap">
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з ікрою масаго</span>
+              <span class="menuItem__top__price">
+                <span>80</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">Hiyashi Wakame </span>
+              <span class="menuItem__top__price">
+                <span>60</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">тар-тар з тунця</span>
+              <span class="menuItem__top__price">
+                <span>75</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">тар-тар з лосося</span>
+              <span class="menuItem__top__price">
+                <span>75</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+        </div>
+        <p class="description">
+          <b>Футомакі —</b> найбільші з усіх видів і з найбільшим набором начинок
+          всередині – це є Футомакі. Використовуватися в якості начинки можуть
+          гриби, омлет, риба і її ікра, а також морепродукти - креветки, краби,
+          кальмари, восьминоги. Овочі, які в різних комбінаціях додаються -
+          дайкон, гарбуз, свіжий огірок, різні сорти салатів, цибуля порей,
+          авокадо.
+        </p>
+        <div class="gallery flex">
+          <img src="./img/1.jpg" alt="gallery" />
+          <img src="./img/2.jpg" alt="gallery" />
+          <img src="./img/3.jpg" alt="gallery" />
+        </div>
+      </div>
       <div class="sushi">
         <span class="itemTitle flex Futomaki">
-        <span class="itemTitle__name">ХОСОМАКІ</span>
-        <span class="itemTitle__quantity">x6</span>
-      </span>
+          <span class="itemTitle__name">Нігірі</span>
+          <span class="itemTitle__quantity">x2</span>
+        </span>
         <div class="gridWrap">
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Ebi Tempura</span>
-            <span class="menuItem__top__price">
-              <span>140</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з обпеченою масляною</span>
+              <span class="menuItem__top__price">
+                <span>90</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
             </span>
-          </span>
-          <span class="menuItem__bottom">Смажена креветка в темпурі</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з обпеченим тунцем</span>
+              <span class="menuItem__top__price">
+                <span>90</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з грибами шиітаке</span>
+              <span class="menuItem__top__price">
+                <span>90</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з обпеченим лососем</span>
+              <span class="menuItem__top__price">
+                <span>75</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">зі спаржою</span>
+              <span class="menuItem__top__price">
+                <span>90</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з авокадо</span>
+              <span class="menuItem__top__price">
+                <span>45</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з лососем</span>
+              <span class="menuItem__top__price">
+                <span>65</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з тигровою креветкою</span>
+              <span class="menuItem__top__price">
+                <span>70</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з вугрем</span>
+              <span class="menuItem__top__price">
+                <span>95</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з масляною</span>
+              <span class="menuItem__top__price">
+                <span>85</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з кальмаром</span>
+              <span class="menuItem__top__price">
+                <span>65</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з маринованим дайконом</span>
+              <span class="menuItem__top__price">
+                <span>50</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з маринованим гарбузом</span>
+              <span class="menuItem__top__price">
+                <span>85</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з солодким омлетом</span>
+              <span class="menuItem__top__price">
+                <span>45</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з тунцем</span>
+              <span class="menuItem__top__price">
+                <span>85</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
         </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Maguro</span>
-            <span class="menuItem__top__price">
-              <span>150</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-            </span>
-          </span>
-          <span class="menuItem__bottom">Тунець</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Philadelphia</span>
-            <span class="menuItem__top__price">
-              <span>140</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-            </span>
-          </span>
-          <span class="menuItem__bottom">Філадельфія з лососем</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Tartar Sake</span>
-            <span class="menuItem__top__price">
-              <span>135</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-            </span>
-          </span>
-          <span class="menuItem__bottom">Смажена креветка в темпурі</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Yasai-Vega</span>
-            <span class="menuItem__top__price">
-              <span>140</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-            </span>
-          </span>
-          <span class="menuItem__bottom">Смажена креветка в темпурі</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Ibodai</span>
-            <span class="menuItem__top__price">
-              <span>125</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-            </span>
-          </span>
-          <span class="menuItem__bottom">Масляна</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Sake</span>
-            <span class="menuItem__top__price">
-              <span>140</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-            </span>
-          </span>
-          <span class="menuItem__bottom">Лосось</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Hotate</span>
-            <span class="menuItem__top__price">
-              <span>170</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-            </span>
-          </span>
-          <span class="menuItem__bottom">Тар-тар з морського гребінця</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Unagi</span>
-            <span class="menuItem__top__price">
-              <span>180</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-            </span>
-          </span>
-          <span class="menuItem__bottom">Вугорь</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Ika Tempura</span>
-            <span class="menuItem__top__price">
-              <span>120</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-            </span>
-          </span>
-          <span class="menuItem__bottom">Смажений кальмар в темпурі</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Surimi</span>
-            <span class="menuItem__top__price">
-              <span>95</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-            </span>
-          </span>
-          <span class="menuItem__bottom">Крабова паличка</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Tartar Maguro</span>
-            <span class="menuItem__top__price">
-              <span>155</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-            </span>
-          </span>
-          <span class="menuItem__bottom">Тар-тар з тунцем</span>
-        </div>
-        <div class="menuItem">
-          <span class="menuItem__top flex">
-            <span class="menuItem__top__name">Grill Sake</span>
-            <span class="menuItem__top__price">
-              <span>140</span>
-              <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
-            </span>
-          </span>
-          <span class="menuItem__bottom">Грильований лосось</span>
+        <p class="description">
+          <b>Футомакі —</b> найбільші з усіх видів і з найбільшим набором начинок
+          всередині – це є Футомакі. Використовуватися в якості начинки можуть
+          гриби, омлет, риба і її ікра, а також морепродукти - креветки, краби,
+          кальмари, восьминоги. Овочі, які в різних комбінаціях додаються -
+          дайкон, гарбуз, свіжий огірок, різні сорти салатів, цибуля порей,
+          авокадо.
+        </p>
+        <div class="gallery flex">
+          <img src="./img/1.jpg" alt="gallery" />
+          <img src="./img/2.jpg" alt="gallery" />
+          <img src="./img/3.jpg" alt="gallery" />
         </div>
       </div>
-      <p class="description">
-        <b>Футомакі —</b> найбільші з усіх видів і з найбільшим набором начинок
-        всередині – це є Футомакі. Використовуватися в якості начинки можуть
-        гриби, омлет, риба і її ікра, а також морепродукти - креветки, краби,
-        кальмари, восьминоги. Овочі, які в різних комбінаціях додаються -
-        дайкон, гарбуз, свіжий огірок, різні сорти салатів, цибуля порей,
-        авокадо.
-      </p>
-      <div class="gallery flex">
-        <img src="./img/1.jpg" alt="gallery" />
-        <img src="./img/2.jpg" alt="gallery" />
-        <img src="./img/3.jpg" alt="gallery" />
+      <div class="sushi">
+        <span class="itemTitle flex">
+          <span class="itemTitle__name">Салати</span>
+        </span>
+        <div class="gridWrap">
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з бурих водоростей</span>
+              <span class="menuItem__top__price">
+                <span>70</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з морських водоростей Чука </span>
+              <span class="menuItem__top__price">
+                <span>55</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+            
+          </div>
+        </div>
+        <div class="gallery flex">
+          <img src="./img/1.jpg" alt="gallery" />
+          <img src="./img/2.jpg" alt="gallery" />
+          <img src="./img/3.jpg" alt="gallery" />
+        </div>
       </div>
-      </div>
+      <div class="sushi">
+        <span class="itemTitle flex">
+          <span class="itemTitle__name">Місо суп</span>
+        </span>
+        <div class="gridWrap">
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з лососем</span>
+              <span class="menuItem__top__price">
+                <span>75</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з грибами Шиітаке </span>
+              <span class="menuItem__top__price">
+                <span>80</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з соєвим сиром Тофу </span>
+              <span class="menuItem__top__price">
+                <span>60</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">вонтон</span>
+              <span class="menuItem__top__price">
+                <span>80</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+             <span class="menuItem__bottom">Суп на бульйоні з яловичини  та японськими пельменями Ґьодза</span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">том ян</span>
+              <span class="menuItem__top__price">
+                <span>85</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+             <span class="menuItem__bottom">Суп на основі кокосового молока та карі пасти з тигровими креветками</span>
+          </div>
+        </div>
+         <p class="description">
+          <b>Мисоширу —</b> страва японської кухні, суп з розчиненою в нім пастою місо. До складу супу включаються водорості Фуеру Вакаме і цибуля порей.
+        </p>
+        <div class="gallery flex">
+          <img src="./img/1.jpg" alt="gallery" />
+          <img src="./img/2.jpg" alt="gallery" />
+          <img src="./img/3.jpg" alt="gallery" />
+        </div>
+        </div>
+        <div class="sushi">
+        <span class="itemTitle flex">
+          <span class="itemTitle__name">Місо суп</span>
+        </span>
+        <div class="gridWrap">
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з тунця</span>
+              <span class="menuItem__top__price">
+                <span>250</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">з лосося </span>
+              <span class="menuItem__top__price">
+                <span>230</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+          </div>
+          <div class="menuItem">
+            <span class="menuItem__top flex">
+              <span class="menuItem__top__name">сашимі мікс</span>
+              <span class="menuItem__top__price">
+                <span>260</span>
+                <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
+              </span>
+            </span>
+             <span class="menuItem__bottom">Тунець, Лосось, Вугор, Масляна, Тигрова креветка</span>
+          </div>
+        </div>
+         <p class="description">
+          <b>Сашимі —</b> тонко нарізане філе різноманітних сортів риб, інших морепродуктів. Продукти використовуються тільки в сирому вигляді, подається разом із соєвим соусом і васабі
+        </p>
+        <div class="gallery flex">
+          <img src="./img/1.jpg" alt="gallery" />
+          <img src="./img/2.jpg" alt="gallery" />
+          <img src="./img/3.jpg" alt="gallery" />
+        </div>
+        </div>
     </section>
     <section class="sets container">
       <h1 class="title">СЕТИ</h1>
-      <div
-        class="gridWrap wow fadeIn"
-        data-wow-duration="3s"
-        data-wow-offset="350"
-      >
+      <div class="gridWrap wow fadeIn" data-wow-duration="3s" data-wow-offset="350">
         <div class="setItem">
           <span class="setItem__top">
             <h3 class="setItem__top__name">Amai Set</h3>
             <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
           </span>
-          <span class="setItem__description">x30 / 1050 г. / <span class="setItem__description__price">660</span>₴</span>
+          <span class="setItem__description">x30 / 1050 г. / <span
+              class="setItem__description__price">660</span>₴</span>
           <ul class="setList">
             <li class="setList__item">x6 Futomaki Philadelphia</li>
             <li class="setList__item">x8 Uramaki Geisha</li>
@@ -540,7 +853,8 @@
             <h3 class="setItem__top__name">Hoso Set</h3>
             <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
           </span>
-          <span class="setItem__description">x24 / 440 г. / <span class="setItem__description__price">180</span> ₴</span>
+          <span class="setItem__description">x24 / 440 г. / <span class="setItem__description__price">180</span>
+            ₴</span>
           <ul class="setList">
             <li class="setList__item">x6 Hosomaki Oshinko</li>
             <li class="setList__item">x6 Hosomaki Kappa</li>
@@ -554,7 +868,8 @@
             <h3 class="setItem__top__name">Umi Set</h3>
             <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
           </span>
-          <span class="setItem__description">x12 / 350 г. / <span class="setItem__description__price">175</span> ₴</span>
+          <span class="setItem__description">x12 / 350 г. / <span class="setItem__description__price">175</span>
+            ₴</span>
           <ul class="setList">
             <li class="setList__item">x6 Futomaki Sake</li>
             <li class="setList__item">x3 Hosomaki Tekka</li>
@@ -567,7 +882,8 @@
             <h3 class="setItem__top__name">Fuji Set</h3>
             <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
           </span>
-          <span class="setItem__description">x24 / 720 г. / <span class="setItem__description__price">410</span> ₴</span>
+          <span class="setItem__description">x24 / 720 г. / <span class="setItem__description__price">410</span>
+            ₴</span>
           <ul class="setList">
             <li class="setList__item">x2 Nigiri Aburi Sake</li>
             <li class="setList__item">x2 Nigiri Aburi Ibodai</li>
@@ -582,7 +898,8 @@
             <h3 class="setItem__top__name">Kyoto Set</h3>
             <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
           </span>
-          <span class="setItem__description">x28 / 950 г. / <span class="setItem__description__price">495</span> ₴</span>
+          <span class="setItem__description">x28 / 950 г. / <span class="setItem__description__price">495</span>
+            ₴</span>
           <ul class="setList">
             <li class="setList__item">x6 Futomaki Maguro</li>
             <li class="setList__item">x6 Futomaki Grill Sake</li>
@@ -596,7 +913,8 @@
             <h3 class="setItem__top__name">Futo Grill Set</h3>
             <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
           </span>
-          <span class="setItem__description">x18 / 650 г. / <span class="setItem__description__price">430</span> ₴</span>
+          <span class="setItem__description">x18 / 650 г. / <span class="setItem__description__price">430</span>
+            ₴</span>
           <ul class="setList">
             <li class="setList__item">x6 Futomaki Unagi</li>
             <li class="setList__item">x6 Futomaki Ibodai</li>
@@ -609,7 +927,8 @@
             <h3 class="setItem__top__name">Nigiri Set</h3>
             <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
           </span>
-          <span class="setItem__description">x10 / 360 г. / <span class="setItem__description__price">340</span> ₴</span>
+          <span class="setItem__description">x10 / 360 г. / <span class="setItem__description__price">340</span>
+            ₴</span>
           <ul class="setList">
             <li class="setList__item">x2 Nigiri Ebi</li>
             <li class="setList__item">x2 Nigiri Ibodai</li>
@@ -624,7 +943,8 @@
             <h3 class="setItem__top__name">Sake Set</h3>
             <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
           </span>
-          <span class="setItem__description">x20 / 660 г. / <span class="setItem__description__price">435</span> ₴</span>
+          <span class="setItem__description">x20 / 660 г. / <span class="setItem__description__price">435</span>
+            ₴</span>
           <ul class="setList">
             <li class="setList__item">x2 Nigiri Sake</li>
             <li class="setList__item">x2 Nigiri Aburi Sake</li>
@@ -639,7 +959,8 @@
             <h3 class="setItem__top__name">Oishi Set</h3>
             <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
           </span>
-          <span class="setItem__description">x28 / 900 г. / <span class="setItem__description__price">575</span> ₴</span>
+          <span class="setItem__description">x28 / 900 г. / <span class="setItem__description__price">575</span>
+            ₴</span>
           <ul class="setList">
             <li class="setList__item">x8 Uramaki Bokudan</li>
             <li class="setList__item">x8 Uramaki Momo Sake</li>
@@ -653,7 +974,8 @@
             <h3 class="setItem__top__name">Vega Set</h3>
             <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
           </span>
-          <span class="setItem__description">x16 / 410 г. / <span class="setItem__description__price">260</span> ₴</span>
+          <span class="setItem__description">x16 / 410 г. / <span class="setItem__description__price">260</span>
+            ₴</span>
           <ul class="setList">
             <li class="setList__item">x1 Nigiri Avokado</li>
             <li class="setList__item">x1 Nigiri Oshinko</li>
@@ -670,7 +992,8 @@
             <h3 class="setItem__top__name">Sushi Sashimi Set</h3>
             <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
           </span>
-          <span class="setItem__description">x20 / 500 г. / <span class="setItem__description__price">410</span> ₴</span>
+          <span class="setItem__description">x20 / 500 г. / <span class="setItem__description__price">410</span>
+            ₴</span>
           <ul class="setList">
             <li class="setList__item">x2 Nigiri Ebi</li>
             <li class="setList__item">x2 Nigiri Sake</li>
@@ -687,7 +1010,8 @@
             <h3 class="setItem__top__name">Tempura Set</h3>
             <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
           </span>
-          <span class="setItem__description">x18 / 650 г. / <span class="setItem__description__price">370</span> ₴</span>
+          <span class="setItem__description">x18 / 650 г. / <span class="setItem__description__price">370</span>
+            ₴</span>
           <ul class="setList">
             <li class="setList__item">x6 Futomaki Ebi Tempura</li>
             <li class="setList__item">x6 Futomaki Sake Tempura</li>
@@ -700,7 +1024,8 @@
             <h3 class="setItem__top__name">Sumo Set</h3>
             <img src="./img/buy.svg" alt="addtocart" class="addToCart" />
           </span>
-          <span class="setItem__description">x56 / 1600 г. / <span class="setItem__description__price">985</span> ₴</span>
+          <span class="setItem__description">x56 / 1600 г. / <span class="setItem__description__price">985</span>
+            ₴</span>
           <ul class="setList">
             <li class="setList__item">x2 Nigiri Sake</li>
             <li class="setList__item">x2 Nigiri Aburi Sake</li>
@@ -748,72 +1073,101 @@
     </section>
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2629.8818174688067!2d24.703890047278346!3d48.93857243751724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4730c1d6a68f1d63%3A0xe755334153a53f55!2sUMAMI%20sushi!5e0!3m2!1sen!2sua!4v1571223084281!5m2!1sen!2sua"
-      width="100%"
-      height="450"
-      frameborder="0"
-      style="border:0;margin-bottom: 15px;"
-      allowfullscreen=""
-    >
+      width="100%" height="450" frameborder="0" style="border:0;margin-bottom: 15px;" allowfullscreen="">
     </iframe>
-    </main>
-       <section class="activeCart" id="activeCart-js">
-      <div class="cartContainer container" id="cartContainer-js">
+  </main>
+  <section class="activeCart" id="activeCart-js">
+    <div class="cartContainer container" id="cartContainer-js">
+      <div class="flex">
         <div class="list">
-          <h1>Корзина</h1>
-          <table id="fillTable-js">
+          <div class="flex cartHeader">
+            <h1 class="cartTitle">Корзина</h1>
+            <p class="sum" id="sum-js"></p>
+          </div>
+          <table class="fillTable" id="fillTable-js">
           </table>
-          <p id="sum-js"></p>
-          <button id="clearCart-js">Очистити корзину</button>
+          <button class="clearCart" id="clearCart-js">Очистити корзину</button>
         </div>
+        <form class="form form-js">
+          <div class="row">
+            <span class="formItem">
+              <label for="formName">Ім'я*</label>
+              <input required class="input-js" type="text" placeholder="Василь" id="formName" maxlength="15" />
+            </span>
+            <span class="formItem">
+              <label for="formPhone">Номер телефону*</label>
+              <input required class="input-js" type="number" placeholder="380 68 409 2581" id="formPhone" maxlength="12"
+                min="0" />
+            </span>
+          </div>
+          <div class="row">
+            <span class="formItem">
+              <label for="formStreet">Вулиця*</label>
+              <input required class="input-js" type="text" placeholder="Галицька" id="formStreet" maxlength="20" />
+            </span>
+            <span class="formItem sm">
+              <label for="formHouse">Номер будинку*</label>
+              <input required type="text" placeholder="139а" id="formHouse" class="input-js smallInput" maxlength="5" />
+            </span>
+            <span class="formItem sm">
+              <label for="formKv">Номер квартири</label>
+              <input type="number" placeholder="2" id="formKv" class="input-js smallInput" maxlength="3" min="0" />
+            </span>
+          </div>
+          <span class="formItem">
+            <label for="describe">Примітка</label>
+            <textarea class="input-js" id="describe" cols="20" rows="9"
+              placeholder="Нотатки до вашого замовлення, наприклад: опис місцевості, код від під’їзду і т.п."></textarea>
+          </span>
+          <button id="submitOrder-js" class="submit" type="submit" onclick="sendMail()">
+            Підтвердити замовлення
+          </button>
+        </form>
       </div>
-    </section>
-    <footer id="footer">
-      <div class="info container">
-        <div class="deliveryAndBook">
-          <h2 class="dbTitle">Доставка та бронювання:</h2>
-          <span>
-            <img src="./img/viber.svg" alt="viber" />+380 68 409 2581
-          </span>
-          <span>
-            <img src="./img/insta.svg" alt="instagram" />umami.sushi.if
-          </span>
-          <span>Всі права захищено 2019</span>
-          <span
-            >Powered with
-            <img src="./img/love.svg" alt="love" class="love" /> by
-            <a
-              href="http://mir4ri.pp.ua"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mir4ri"
-              >mir4ri</a
-            ></span
-          >
-        </div>
-        <div class="addrAndSchedule">
-          <h2 class="asTitle">Наша адреса:</h2>
-          <p>
-            м. Івано-Франківськ <br />
-            вул. Галицька, 139а <br />
-            ТЦ “River Park” (2-й поверх), <br />
-            Поряд паспортного сервісу
-          </p>
-          <div class="schedule">
-            <div>
-              <span>Пн - Пт</span>
-              <span>09.00-22.00</span>
-            </div>
-            <div>
-              <span>Сб. Нд.</span>
-              <span>10.00-22.00</span>
-            </div>
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="info container">
+      <div class="deliveryAndBook">
+        <h2 class="dbTitle">Доставка та бронювання:</h2>
+        <span>
+          <img src="./img/viber.svg" alt="viber" />+380 68 409 2581
+        </span>
+        <span>
+          <img src="./img/insta.svg" alt="instagram" />umami.sushi.if
+        </span>
+        <span>Всі права захищено 2019</span>
+        <span>Powered with
+          <img src="./img/love.svg" alt="love" class="love" /> by
+          <a href="http://mir4ri.pp.ua" target="_blank" rel="noopener noreferrer" class="mir4ri">mir4ri</a></span>
+      </div>
+      <div class="addrAndSchedule">
+        <h2 class="asTitle">Наша адреса:</h2>
+        <p>
+          м. Івано-Франківськ <br />
+          вул. Галицька, 139а <br />
+          ТЦ “River Park” (2-й поверх), <br />
+          Поряд паспортного сервісу
+        </p>
+        <div class="schedule">
+          <div>
+            <span>Пн - Пт</span>
+            <span>09.00-22.00</span>
+          </div>
+          <div>
+            <span>Сб. Нд.</span>
+            <span>10.00-22.00</span>
           </div>
         </div>
       </div>
-    </footer>
-  </body>
-  <script src="./js/scripts.js"></script>
-  <script>
-    new WOW().init();
-  </script>
+    </div>
+  </footer>
+</body>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script src="./js/scripts.js"></script>
+<script>
+  new WOW().init();
+</script>
+
 </html>

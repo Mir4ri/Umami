@@ -122,12 +122,105 @@ header .container .cart #localLength {
 }
 
 .activeCart .cartContainer {
+  padding: 20px;
+  border-radius: 5px;
   cursor: auto;
   position: relative;
   background-color: #fafafa;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   top: 50%;
+}
+
+.activeCart .cartContainer .list {
+  width: 46%;
+}
+
+.activeCart .cartContainer .list .cartHeader {
+  margin-top: 20px;
+}
+
+.activeCart .cartContainer .list .cartHeader .cartTitle {
+  font-size: 28px;
+}
+
+.activeCart .cartContainer .list .fillTable {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.activeCart .cartContainer .list .fillTable .cartRow {
+  font-weight: 600;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.activeCart .cartContainer .list .fillTable .cartRow .priceSushi {
+  direction: rtl;
+}
+
+.activeCart .cartContainer .list .sum {
+  color: #c00000;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.activeCart .cartContainer .list .clearCart {
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #d20000;
+  color: #fafafa;
+  border: none;
+  padding: 0.3em 0;
+  width: 100%;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.activeCart .cartContainer .list .clearCart:hover {
+  background-color: #c00000;
+}
+
+.activeCart .cartContainer .list .clearCart:focus {
+  outline: none;
+  background-color: #464444;
+}
+
+.activeCart .cartContainer .form {
+  margin-top: 20px;
+  width: 52%;
+}
+
+.activeCart .cartContainer .form .formItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 7px;
+}
+
+.activeCart .cartContainer .form .formItem label {
+  margin-bottom: 5px;
+}
+
+.activeCart .cartContainer .form .formItem input {
+  padding: 4px;
+  border: 1px solid #d3cccc;
+  border-radius: 2px;
+}
+
+.activeCart .cartContainer .form .submit {
+  cursor: pointer;
+  border: 1px solid #d20000;
+  border-radius: 2px;
+  background-color: #d20000;
+  padding: 0.3em 0;
+  width: 100%;
+  color: #fafafa;
+  font-weight: 600;
 }
 
 * {
@@ -424,6 +517,7 @@ main {
 }
 
 .menu .gridWrap .menuItem .menuItem__top .menuItem__top__name {
+  text-transform: capitalize;
   font-size: 1.2em;
   font-weight: 600;
   letter-spacing: 0.03em;
