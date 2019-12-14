@@ -47,9 +47,11 @@ header {
       }
     }
     .cart {
-      cursor: pointer;
       align-self: center;
       justify-content: flex-end;
+      .iconCart {
+        cursor: pointer;
+      }
       #localLength {
         position: relative;
         left: -20px;

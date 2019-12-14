@@ -86,13 +86,16 @@ header .container nav a:last-child {
 }
 
 header .container .cart {
-  cursor: pointer;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+header .container .cart .iconCart {
+  cursor: pointer;
 }
 
 header .container .cart #localLength {
