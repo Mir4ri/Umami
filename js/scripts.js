@@ -220,7 +220,11 @@ clearCart.onclick = () => {
 };
 
 btnPopup.onclick = function() {
-  document.querySelector("html").style.overflow = "hidden";
+  if (window.width < 1200) {
+    document.querySelector("html").style.overflow = "auto";
+  } else {
+    document.querySelector("html").style.overflow = "hidden";
+  }
   popup.style.display = "block";
   document
     .getElementById("cartContainer-js")
@@ -244,16 +248,21 @@ function cartLog() {
   return keys;
 }
 
+var inputName = document.querySelector("#formName").value;
+var inputPhone = document.querySelector("#formPhone").value;
+var inputStreet = document.querySelector("#formStreet").value;
+var inputHouse = document.querySelector("#formHouse").value;
+
 function checkValue() {
   var FormValue =
     "Ім'я: " +
-    document.querySelector("#formName").value +
+    inputName +
     " Телефон: " +
-    document.querySelector("#formPhone").value +
+    inputPhone +
     " Вулиця: " +
-    document.querySelector("#formStreet").value +
+    inputStreet +
     " Будинок: " +
-    document.querySelector("#formHouse").value +
+    inputHouse +
     " Квартира: " +
     document.querySelector("#formKv").value +
     " Примітка: " +
@@ -276,6 +285,6 @@ function sendMail() {
       From: "gtasanbuchko@gmail.com",
       Subject: "Замовлення",
       Body: readyMail()
-    }).then(message => alert(message));
+    }).then(alert("Замовлення відправлено. Очікуйте дзвінка."));
   }
 }

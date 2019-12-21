@@ -10,7 +10,7 @@ header {
   .container {
     display: flex;
     justify-content: center;
-    &:first-child > picture {
+    &:first-child > .logo {
       display: flex;
       flex: 1;
       margin-left: auto;
@@ -64,6 +64,34 @@ header {
         color: #fefefe;
         font-weight: bold;
         border-radius: 50%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1210px) {
+  header {
+    .container {
+      width: 99%;
+      &:first-child > .logo {
+        margin: 0 15px;
+      }
+      nav {
+        width: 100%;
+
+        a {
+          font-size: 1em;
+        }
+      }
+      .cart {
+        .iconCart {
+          width: 40px;
+        }
+        #localLength {
+          left: -15px;
+          height: 19px;
+          width: 20px;
+        }
       }
     }
   }
