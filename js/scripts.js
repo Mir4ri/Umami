@@ -248,21 +248,16 @@ function cartLog() {
   return keys;
 }
 
-var inputName = document.querySelector("#formName").value;
-var inputPhone = document.querySelector("#formPhone").value;
-var inputStreet = document.querySelector("#formStreet").value;
-var inputHouse = document.querySelector("#formHouse").value;
-
 function checkValue() {
   var FormValue =
     "Ім'я: " +
-    inputName +
+    document.querySelector("#formName").value +
     " Телефон: " +
-    inputPhone +
+    document.querySelector("#formPhone").value +
     " Вулиця: " +
-    inputStreet +
+    document.querySelector("#formStreet").value +
     " Будинок: " +
-    inputHouse +
+    document.querySelector("#formHouse").value +
     " Квартира: " +
     document.querySelector("#formKv").value +
     " Примітка: " +
@@ -280,9 +275,9 @@ readyMail = () => {
 function sendMail() {
   if (!localStorage.length == "0") {
     Email.send({
-      SecureToken: "c9ce6b12-bf13-4138-9f8e-b0871268bcb1",
-      To: "leobuchko@gmail.com",
-      From: "gtasanbuchko@gmail.com",
+      SecureToken: "e0f5079a-515d-4f13-935d-c187aea28de6",
+      To: "umamisushiua@gmail.com",
+      From: "umamisushiua@gmail.com",
       Subject: "Замовлення",
       Body: readyMail()
     }).then(alert("Замовлення відправлено. Очікуйте дзвінка."));
