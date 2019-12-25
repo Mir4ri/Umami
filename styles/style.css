@@ -346,15 +346,20 @@ main {
   display: block;
 }
 
+.gallery img {
+  height: 250px;
+  width: 440px;
+}
+
 /* hero */
 .hero {
   background-image: url("../img/hero.jpg");
   background-attachment: fixed, local;
   background-repeat: no-repeat;
-  height: 400px;
+  height: 380px;
   margin-bottom: 41px;
   background-position: center 68px;
-  background-size: auto 46%;
+  background-size: 100%;
   position: relative;
   z-index: 0;
 }
@@ -794,6 +799,9 @@ footer .info .addrAndSchedule .schedule div span {
   .container {
     width: 1200px;
   }
+  .gallery img {
+    width: 380px;
+  }
   .menu .itemTitle {
     width: 380px;
   }
@@ -809,9 +817,6 @@ footer .info .addrAndSchedule .schedule div span {
         grid-template-columns: 380px 380px 380px;
   }
   .sets .gridWrap .setItem {
-    width: 380px;
-  }
-  .gallery img {
     width: 380px;
   }
 }
