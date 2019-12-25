@@ -39,6 +39,21 @@ main {
   margin-bottom: 42px;
 }
 
+.addToCart {
+  display: block;
+  cursor: pointer;
+  background-color: #d20000;
+  color: #fafafa;
+  width: 24px;
+  height: 24px;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 0.6;
+  text-align: center;
+  border-radius: 50%;
+}
+
 /* notification */
 
 #notification {
@@ -335,7 +350,6 @@ main {
   }
 }
 
-
 // fin sets
 
 /* delivery */
@@ -455,7 +469,7 @@ footer {
     img {
       width: 380px;
     }
-}
+  }
 
   .menu {
     .itemTitle {
