@@ -160,16 +160,19 @@ sushiContainer.onclick = function(event) {
   btnCart = event.target.closest(".addToCart");
   if (!btnCart) return;
   notification.classList.add("active");
-  console.log();
-  localStorage.setItem(
-    event.target.closest(".sushi").querySelector(".itemTitle__name")
-      .textContent +
-      " " +
-      event.target
-        .closest(".menuItem__top")
-        .querySelector(".menuItem__top__name").textContent,
-    event.target.parentNode.closest("span").textContent
+
+  console.log(
+    localStorage.setItem(
+      event.target.closest(".sushi").querySelector(".itemTitle__name")
+        .textContent +
+        " " +
+        event.target
+          .closest(".menuItem__top")
+          .querySelector(".menuItem__top__name").textContent,
+      event.target.parentNode.closest("span").querySelector("span").textContent
+    )
   );
+
   document.getElementById("localLength").innerHTML = localStorage.length;
   setTimeout(() => notification.classList.remove("active"), 790);
 };
